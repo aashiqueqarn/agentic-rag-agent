@@ -1,4 +1,4 @@
-name: Reflexion Agent
+name: Agentic RAG Agent
 
 on:
   push:
@@ -76,7 +76,7 @@ jobs:
 
       - name: Run tests if present
         run: |
-          if ls -1 *test*.py 2>/dev/null | grep -q .; then
+          if find . -name "*test*.py" | grep -q .; then
               poetry run pytest
           else
               echo "No tests found. Skipping pytest."
