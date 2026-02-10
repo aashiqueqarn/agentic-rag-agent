@@ -72,9 +72,9 @@ workflow.add_conditional_edges(
     GENERATE,
     grade_generation_grounded_in_documents_and_question,
     {
+        'not supported': GENERATE,
         'useful': END,
         'not useful': WEB_SEARCH,
-        'not supported': GENERATE
     }
 )
 workflow.add_edge(WEB_SEARCH, GENERATE)
