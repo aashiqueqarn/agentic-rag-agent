@@ -64,7 +64,7 @@ def test_router_to_vectorstore() -> None:
     res: RouteQuery = question_router.invoke({"question": question})
     assert res.datasource == "vectorstore"
 
-def test_router_to_websearch() -> None:
+def test_router_to_web_search() -> None:
     question = "how to make pizza"
     res: RouteQuery = question_router.invoke({"question": question})
-    assert res.datasource == "websearch"
+    assert res.datasource == "web_search"

@@ -9,7 +9,7 @@ load_dotenv()
 class RouteQuery(BaseModel):
     """Route a user query to the most relevant datasource."""
 
-    datasource: Literal["vectorstore", "websearch"] = Field(
+    datasource: Literal["vectorstore", "web_search"] = Field(
         ...,
         description="Given a user question choose to route it to web search or a vectorstore.",
     )

@@ -6,4 +6,4 @@ load_dotenv()
 
 if __name__ == "__main__":
     print("Hello, World!")
-    print(app.invoke({'question': "What is agent memory?"}))
+    print(app.invoke({'question': "agent memory?"}))
