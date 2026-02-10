@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from pprint import pprint
 
 from graph.chains.retrieval_grader import GradeDocuments, retrieval_grader
+from graph.chains.router import RouteQuery, question_router
 from graph.chains.generation import generation_chain
 from ingestion import retriver
 
@@ -57,3 +58,8 @@ def test_hallucination_grader_answer_no() -> None:
     )
     print(res.binary_score)
     assert res.binary_score in [True, False]
+
+def test_router_to_vectorstore() -> None:
+    question = "agent memory"
+    res: RouteQuery = question_router.invoke({"question": question})
+    assert res.datasoruce == "vectorstore"
