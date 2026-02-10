@@ -9,9 +9,9 @@ load_dotenv()
 class RouteQuery(BaseModel):
     """Route a user query to the most relevant datasource."""
 
-    route: Literal['vectorstore', 'websearch'] = Field(
+    datasource: Literal["vectorstore", "websearch"] = Field(
         ...,
-        description="Given a user question choose to route it to web search or vectorstore."
+        description="Given a user question choose to route it to web search or a vectorstore.",
     )
 
 llm = ChatOpenAI(temperature=0)
